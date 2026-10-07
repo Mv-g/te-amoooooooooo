@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>La rosa que no se marchita 🌹</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--s1:#6d4aa8;--s2:#c46bb5;--s3:#ffb0cf;--card:#fff8fc;--ink:#5a2a55;--acc:#ec5f9e;--acc2:#9d5fd8;--soft:#a1639c}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--s1:#140a2e;--s2:#3a1650;--s3:#6a2458;--card:#2f1840;--ink:#ffe9f6;--acc:#ff7fb9;--acc2:#c39bff;--soft:#e2b0dd}}
+:root[data-theme="dark"]{--s1:#140a2e;--s2:#3a1650;--s3:#6a2458;--card:#2f1840;--ink:#ffe9f6;--acc:#ff7fb9;--acc2:#c39bff;--soft:#e2b0dd}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;min-height:100vh;background:linear-gradient(180deg,var(--s1),var(--s2) 62%,var(--s3));background-attachment:fixed;color:#fff;font-family:'Quicksand',system-ui,sans-serif;overflow-x:hidden}
+.moon{position:fixed;top:4vh;right:7vw;width:64px;height:64px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#fffbe8,#ffe3f1 60%,#f3c6ee);box-shadow:0 0 40px 12px rgba(255,220,240,.4);pointer-events:none}
+.star{position:fixed;border-radius:50%;background:#fff;pointer-events:none;animation:tw 3s infinite}
+@keyframes tw{50%{opacity:.15}}
+.ff{position:fixed;width:6px;height:6px;border-radius:50%;background:#fff6b0;box-shadow:0 0 10px 3px #ffe98a;pointer-events:none;animation:dr var(--t) ease-in-out infinite alternate,bl 2.4s infinite}
+@keyframes dr{to{transform:translate(var(--x),var(--y))}}
+@keyframes bl{50%{opacity:.25}}
+.wrap{position:relative;z-index:2;max-width:440px;margin:0 auto;padding:22px 14px 70px;text-align:center}
+h1{font-family:'Pacifico','Segoe Script','Brush Script MT',cursive;font-weight:400;font-size:2rem;margin:4px 0;text-shadow:0 0 18px rgba(255,160,210,.8)}
+.sub{margin:0 0 4px;opacity:.9}
+svg{width:100%;height:auto;display:block;overflow:visible}
+#ra{transform-origin:200px 452px;animation:sw 5s ease-in-out infinite alternate}
+@keyframes sw{from{transform:rotate(-1.2deg)}to{transform:rotate(1.2deg)}}
+#bw{transform-origin:200px 262px;cursor:pointer}
+#gl{transform-origin:200px 262px;animation:gp 3s ease-in-out infinite alternate}
+@keyframes gp{from{transform:scale(.85);opacity:.7}to{transform:scale(1.1);opacity:1}}
+.hint{font-size:.95rem;margin:2px 0 6px;opacity:.95}
+#hr{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin:6px 0 12px}
+#hr span{font-size:1.4rem;color:rgba(255,255,255,.35);transition:.4s}
+#hr span.on{color:#ff8fc4;text-shadow:0 0 10px #ff8fc4;cursor:pointer}
+.card{position:relative;background:var(--card);color:var(--ink);border:2px solid var(--acc);border-radius:20px;padding:20px 18px 18px;line-height:1.65;box-shadow:0 10px 28px rgba(0,0,0,.28);min-height:100px}
+.card:before,.card:after{content:"❀";position:absolute;color:var(--acc);font-size:1.1rem}
+.card:before{top:6px;left:12px}.card:after{bottom:6px;right:12px}
+.card b{display:block;font-family:'Pacifico',cursive;font-weight:400;font-size:1.25rem;color:var(--acc);margin-bottom:4px}
+.pop{animation:pop .6s}
+@keyframes pop{from{opacity:0;transform:scale(.9) translateY(10px)}to{opacity:1;transform:none}}
+.days{font-family:'Pacifico',cursive;font-size:2.4rem;color:var(--acc);margin:4px 0}
+#fin{display:none;margin-top:18px}
+#fin.show{display:block}
+.fx{position:fixed;top:-30px;pointer-events:none;animation:dn linear forwards;z-index:5}
+@keyframes dn{to{transform:translateY(112vh) rotate(300deg)}}
+.sp{position:fixed;pointer-events:none;z-index:6;animation:spk .8s forwards;color:#ffe9a8;text-shadow:0 0 8px #fff}
+@keyframes spk{to{transform:translateY(-40px) scale(.2) rotate(90deg);opacity:0}}
+</style>
+</head>
+<body>
+<div class="moon"></div>
+<div class="wrap">
+  <h1>La rosa que no se marchita 🌹</h1>
+  <p class="sub">Para Ana, mi fiu fiu</p>
+  <p class="hint" id="hint">Toca la rosa y deja caer sus pétalos ✨</p>
+  <svg id="sv" viewBox="0 0 400 540" role="img" aria-label="Rosa dentro de una cúpula de cristal">
+    <defs>
+      <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6d58e"/><stop offset="1" stop-color="#a8762f"/></linearGradient>
+      <linearGradient id="goldT" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff0bd"/><stop offset="1" stop-color="#d4a24f"/></linearGradient>
+      <radialGradient id="vel" cx=".5" cy=".4"><stop offset="0" stop-color="#8a45aa"/><stop offset="1" stop-color="#3a1556"/></radialGradient>
+      <radialGradient id="glass" cx=".35" cy=".25" r=".9"><stop offset="0" stop-color="#fff" stop-opacity=".3"/><stop offset="1" stop-color="#fff" stop-opacity=".04"/></radialGradient>
+      <radialGradient id="glow"><stop offset="0" stop-color="#ff9fd0" stop-opacity=".85"/><stop offset="1" stop-color="#ff9fd0" stop-opacity="0"/></radialGradient>
+      <linearGradient id="pa" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffb8d9"/><stop offset="1" stop-color="#e2428b"/></linearGradient>
+      <linearGradient id="pb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e6c4ff"/><stop offset="1" stop-color="#8b4bd0"/></linearGradient>
+      <radialGradient id="core"><stop offset="0" stop-color="#ff6aa8"/><stop offset="1" stop-color="#a8236b"/></radialGradient>
+      <path id="pt" d="M0 0C-24-8-30-40 0-46C30-40 24-8 0 0Z"/>
+    </defs>
+    <circle id="gl" cx="200" cy="262" r="140" fill="url(#glow)"/>
+    <path d="M62 452L62 488A138 30 0 0 0 338 488L338 452Z" fill="#000" opacity=".25" transform="translate(0 10)"/>
+    <path d="M50 452L50 490A150 34 0 0 0 350 490L350 452Z" fill="url(#gold)"/>
+    <ellipse cx="200" cy="452" rx="150" ry="34" fill="url(#goldT)"/>
+    <ellipse cx="200" cy="452" rx="130" ry="27" fill="url(#vel)" stroke="#a8762f" stroke-width="2"/>
+    <text x="200" y="492" text-anchor="middle" font-family="Pacifico,cursive" font-size="17" fill="#fff6d2">Para Ana ♥ 10 meses</text>
+    <g id="ra">
+      <path d="M200 300C194 360 210 405 200 452" stroke="#5fb98c" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <path d="M200 395C170 385 150 360 148 340C175 345 195 365 200 395Z" fill="#8fdbb4" stroke="#4fa57a" stroke-width="2"/>
+      <path d="M203 370C232 362 250 340 252 320C225 326 206 345 203 370Z" fill="#8fdbb4" stroke="#4fa57a" stroke-width="2"/>
+      <path d="M198 340l-9-4 9-3zM203 410l9-3-9-5z" fill="#4fa57a"/>
+      <g id="bw"><g id="bl"></g><g id="op"></g></g>
+    </g>
+    <g id="fp"></g>
+    <g style="pointer-events:none">
+      <path d="M62 452L62 230C62 110 130 48 200 48C270 48 338 110 338 230L338 452A138 28 0 0 1 62 452Z" fill="url(#glass)" stroke="#fff" stroke-opacity=".55" stroke-width="2.5"/>
+      <path d="M84 230C84 150 116 98 160 76" stroke="#fff" stroke-opacity=".6" stroke-width="6" stroke-linecap="round" fill="none"/>
+      <path d="M92 270L92 330" stroke="#fff" stroke-opacity=".4" stroke-width="5" stroke-linecap="round"/>
+      <path d="M300 130C314 150 320 180 320 210" stroke="#fff" stroke-opacity=".35" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <ellipse cx="200" cy="452" rx="138" ry="28" fill="none" stroke="#e8c26f" stroke-width="5"/>
+      <circle cx="200" cy="44" r="8" fill="url(#goldT)" stroke="#a8762f" stroke-width="1.5"/>
+    </g>
+  </svg>
+  <div id="hr"></div>
+  <div class="card" id="card">Dentro de esta cúpula hay <b style="display:inline;font-size:inherit">10 promesas</b>, una en cada pétalo. Tócala 🌹</div>
+  <div class="card" id="fin">
+    <b>Esta rosa nunca se marchita 💗</b>
+    Los pétalos caen, pero lo que siento por ti se queda. Gracias por quedarte, por hacer que la distancia se sienta pequeñita y por dejarme quererte así.
+    <p class="days" id="days">0</p>
+    <div>días siendo tuya 💞<br>Cada día es uno menos para abrazarte.</div>
+    <p style="color:var(--acc2);font-weight:600;margin:12px 0 0">Feliz 10 meses, mi niña linda. Te amo.<br>Tu fichu fichu 🌹</p>
+  </div>
+</div>
+
+<script>
+var N="http://www.w3.org/2000/svg",$=function(i){return document.getElementById(i)};
+function el(t,a,p){var e=document.createElementNS(N,t);for(var k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e}
+var X=["Prometo escucharte siempre, incluso cuando solo quieras desahogarte.","Prometo recordarte lo valiosa que eres cuando tú lo olvides.","Prometo esforzarme para que lo nuestro sea cada día más sano y más bonito.","Prometo no soltarte la mano, aunque por ahora esa mano sea una pantalla.","Prometo reírme contigo de cualquier bobada todos los días que pueda.","Prometo cuidar tu corazón como si fuera el mío.","Prometo decirte «te amo» muchas veces, aunque ya lo sepas.","Prometo ser paciente con la distancia y con nosotras.","Prometo que cuando me extrañes, pienses que yo también te estoy extrañando.","Prometo seguir eligiéndote, hoy y todos los días que vengan."];
+/* fondo */
+for(var i=0;i<60;i++){var s=document.createElement("div");s.className="star";var z=Math.random()*2+1;s.style.cssText="left:"+Math.random()*100+"vw;top:"+Math.random()*70+"vh;width:"+z+"px;height:"+z+"px;animation-delay:"+Math.random()*3+"s";document.body.appendChild(s)}
+for(var i=0;i<16;i++){var f=document.createElement("div");f.className="ff";f.style.cssText="left:"+Math.random()*100+"vw;top:"+(30+Math.random()*65)+"vh;--t:"+(5+Math.random()*6)+"s;--x:"+(Math.random()*80-40)+"px;--y:"+(Math.random()*-90)+"px";document.body.appendChild(f)}
+/* rosa */
+var bl=$("bl"),op=$("op"),fp=$("fp"),P=[];
+for(var k=0;k<8;k++){var g=el("g",{transform:"translate(200 262) rotate("+(k*45+22)+") scale(1.05)"},bl);el("use",{href:"#pt",fill:k%2?"url(#pb)":"url(#pa)",stroke:"#fff","stroke-opacity":.35,"stroke-width":1.2},g)}
+for(var k=0;k<6;k++){var g=el("g",{transform:"translate(200 262) rotate("+(k*60)+") scale(.7)"},bl);el("use",{href:"#pt",fill:k%2?"url(#pa)":"url(#pb)",stroke:"#fff","stroke-opacity":.4,"stroke-width":1.2},g)}
+el("circle",{cx:200,cy:262,r:17,fill:"url(#core)",stroke:"#8f1d5c","stroke-width":1.5},bl);
+el("path",{d:"M200 262C207 259 209 268 200 270C190 270 188 255 200 251C214 251 217 270 203 277",fill:"none",stroke:"#ffd0e6","stroke-width":2,"stroke-linecap":"round"},bl);
+for(var i=0;i<10;i++){
+ var a=i*36+(i%2?10:0),sc=1.38+(i%2)*.12;
+ var g=el("g",{},op);g.dataset.a=a;g.dataset.s=sc;
+ g.style.transformOrigin="0 0";g.style.transform="translate(200px,262px) scale(1,1) rotate("+a+"deg) scale("+sc+")";
+ el("use",{href:"#pt",fill:i%2?"url(#pb)":"url(#pa)",stroke:"#fff","stroke-opacity":.45,"stroke-width":1.2},g);
+ el("path",{d:"M-9-14C-7-26-3-34 4-39",stroke:"#fff","stroke-opacity":.55,"stroke-width":2,"stroke-linecap":"round",fill:"none"},g);
+ P.push(g);
+}
+P.reverse();
+/* pétalos recogidos */
+var H=[];for(var i=0;i<10;i++){var s=document.createElement("span");s.textContent="♥";s.dataset.i=i;$("hr").appendChild(s);H.push(s);(function(i,s){s.onclick=function(){if(s.classList.contains("on"))show(i)}})(i,s)}
+function show(i){var c=$("card");c.classList.remove("pop");void c.offsetWidth;c.innerHTML="<b>Promesa "+(i+1)+"</b><span></span>";c.querySelector("span").textContent=X[i];c.classList.add("pop")}
+var fell=0,busy=false;
+$("bw").addEventListener("click",function(){
+ if(busy||fell>=10)return;busy=true;setTimeout(function(){busy=false},650);
+ var i=fell++,g=P[i];
+ $("hint").textContent=fell<10?"Toca otra vez 🌹 ("+fell+" de 10)":"¡Cayó el último pétalo! ✨";
+ $("bw").animate([{transform:"scale(1)"},{transform:"scale(1.07) rotate(-3deg)"},{transform:"scale(1)"}],{duration:500});
+ fp.appendChild(g);
+ var a=+g.dataset.a,s=+g.dataset.s,dx=Math.random()*80-40,tx=200+Math.random()*190-95,ty=446+Math.random()*16,r=Math.random()*360;
+ g.animate([
+  {transform:"translate(200px,262px) scale(1,1) rotate("+a+"deg) scale("+s+")"},
+  {transform:"translate("+(200+dx)+"px,360px) scale(1,1) rotate("+(a+90)+"deg) scale("+(s*.85)+")",offset:.5},
+  {transform:"translate("+tx+"px,"+ty+"px) scale(1,.42) rotate("+r+"deg) scale(.62)"}
+ ],{duration:2600,easing:"cubic-bezier(.4,0,.6,1)",fill:"forwards"});
+ setTimeout(function(){H[i].classList.add("on");show(i);rain(3,["🌸"])},700);
+ if(fell==10)setTimeout(end,3100);
+});
+function end(){
+ $("bw").animate([{transform:"scale(1)"},{transform:"scale(1.18)"},{transform:"scale(1.08)"}],{duration:1200,fill:"forwards",easing:"ease-out"});
+ $("fin").classList.add("show");
+ var a=new Date(2025,11,8),n=new Date();
+ $("days").textContent=Math.max(0,Math.floor((new Date(n.getFullYear(),n.getMonth(),n.getDate())-a)/86400000));
+ rain(40,["🌸","🌹","💗","💜","✨"]);
+ setTimeout(function(){$("fin").scrollIntoView({behavior:"smooth"})},600);
+}
+function rain(n,e){for(var i=0;i<n;i++)(function(i){setTimeout(function(){
+ var h=document.createElement("div");h.className="fx";h.textContent=e[i%e.length];
+ h.style.left=Math.random()*100+"vw";h.style.fontSize=(16+Math.random()*14)+"px";h.style.animationDuration=(4+Math.random()*4)+"s";
+ document.body.appendChild(h);setTimeout(function(){h.remove()},8500)},i*120)})(i)}
+document.addEventListener("pointerdown",function(e){for(var i=0;i<3;i++){var s=document.createElement("div");s.className="sp";s.textContent="✦";s.style.left=(e.clientX+Math.random()*30-15)+"px";s.style.top=(e.clientY+Math.random()*30-15)+"px";s.style.fontSize=(10+Math.random()*10)+"px";document.body.appendChild(s);setTimeout(function(){s.remove()},850)}});
+</script>
+</body>
+</html>
